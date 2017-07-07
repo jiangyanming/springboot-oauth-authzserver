@@ -24,7 +24,10 @@ integration.
 
 
 ## Start the application
+
+<pre>
 mvn spring-boot:run
+</pre>
 
 This starts the application on port 8081 with a context path of /auth
 
@@ -40,17 +43,22 @@ client2, password2
 
 Use CURL to request for token:
 
+<pre>
 curl -X POST client2:password2@localhost:8081/auth/oauth/token -d grant_type=client_credentials
+</pre>
 
 You may expect a response such as below:
+<pre>
 {
     "access_token": "4c1a4b8c-461b-484a-8d61-408971648ac2",
     "token_type": "bearer",
     "expires_in": 43200,
     "scope": "resource-server-read resource-server-write"
 }
+</pre>
 
 With a different username and password you may get:
+<pre>
 {
     "timestamp": 1499273815728,
     "status": 401,
@@ -58,3 +66,4 @@ With a different username and password you may get:
     "message": "Bad credentials",
     "path": "/auth/oauth/token"
 }
+</pre>
