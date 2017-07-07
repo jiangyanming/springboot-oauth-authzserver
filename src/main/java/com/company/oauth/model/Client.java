@@ -6,10 +6,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.provider.ClientDetails;
+import org.springframework.security.oauth2.provider.client.BaseClientDetails;
+import org.springframework.stereotype.Component;
 
-public class Client implements ClientDetails{
+@Component
+public class Client extends BaseClientDetails /*implements ClientDetails*/{
 	
 	static final long serialVersionUID = 1L;
 	
@@ -20,7 +24,6 @@ public class Client implements ClientDetails{
 	Set<String> scope;
 
 	Set<String> authorizedGrantTypes;
-	
 	
 	public void setClientId(String clientId) {
 		this.clientId = clientId;
@@ -48,17 +51,17 @@ public class Client implements ClientDetails{
 		return sb.toString();
     }
 
-	@Override
-	public Integer getAccessTokenValiditySeconds() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Map<String, Object> getAdditionalInformation() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public Integer getAccessTokenValiditySeconds() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+//	public Map<String, Object> getAdditionalInformation() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 	@Override
 	public Set<String> getAuthorizedGrantTypes() {
@@ -75,34 +78,34 @@ public class Client implements ClientDetails{
 		return clientSecret;
 	}
 
-	@Override
-	public Integer getRefreshTokenValiditySeconds() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Set<String> getRegisteredRedirectUri() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Set<String> getResourceIds() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public Integer getRefreshTokenValiditySeconds() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+//	public Set<String> getRegisteredRedirectUri() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	@Override
+//	public Set<String> getResourceIds() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
 
 	@Override
 	public Set<String> getScope() {
 		return scope;
 	}
 
-	@Override
-	public boolean isAutoApprove(String arg0) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+//	@Override
+//	public boolean isAutoApprove(String arg0) {
+//		// TODO Auto-generated method stub
+//		return false;
+//	}
 
 	@Override
 	public boolean isScoped() {
@@ -114,10 +117,10 @@ public class Client implements ClientDetails{
 		return true;
 	}
 
-	@Override
-	public Collection<GrantedAuthority> getAuthorities() {
-		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-		return authorities;
-	}
+//	@Override
+//	public Collection<GrantedAuthority> getAuthorities() {
+//		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+//		return authorities;
+//	}
 
 }

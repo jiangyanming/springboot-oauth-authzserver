@@ -21,6 +21,8 @@ private static final Logger logger = Logger.getLogger(UserDetailsServiceLocalImp
 	
 	private static Map<String, ClientDetails> clientMap;
 	
+	private static final Integer TOKEN_EXPIRY = 60;
+	
 	static {
 		clientMap = new HashMap<String, ClientDetails>();
 
@@ -36,6 +38,7 @@ private static final Logger logger = Logger.getLogger(UserDetailsServiceLocalImp
 		client1.setClientSecret("password1");
 		client1.setScope(scope);
 		client1.setAuthorizedGrantTypes(authzGrantTypes);
+		client1.setAccessTokenValiditySeconds(TOKEN_EXPIRY);
 		clientMap.put(client1.getClientId(), client1);
 		logger.log(Level.INFO, "Client 1 : " + client1);
 
@@ -44,6 +47,7 @@ private static final Logger logger = Logger.getLogger(UserDetailsServiceLocalImp
 		client2.setClientSecret("password2");
 		client2.setScope(scope);
 		client2.setAuthorizedGrantTypes(authzGrantTypes);
+		client2.setAccessTokenValiditySeconds(TOKEN_EXPIRY);
 		clientMap.put(client2.getClientId(), client2);
 		logger.log(Level.INFO, "Client 2 : " + client2);
 
