@@ -47,7 +47,7 @@ Use CURL to request for token:
 curl -X POST client2:password2@localhost:8081/auth/oauth/token -d grant_type=client_credentials
 </pre>
 
-You may expect a response such as below:
+You may expect a response such as the one given below:
 <pre>
 {
     "access_token": "4c1a4b8c-461b-484a-8d61-408971648ac2",
@@ -57,7 +57,7 @@ You may expect a response such as below:
 }
 </pre>
 
-With a different username and password you may get:
+With a different username and password you may get a response as shown below:
 <pre>
 {
     "timestamp": 1499273815728,
