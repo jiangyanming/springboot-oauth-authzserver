@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 @EnableResourceServer
-public class SpringbootOauthdemoApplication {
+public class OauthApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringbootOauthdemoApplication.class, args);
+		SpringApplication.run(OauthApplication.class, args);
 	}
 	
 	@RequestMapping("/user")
